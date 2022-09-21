@@ -5,3 +5,4 @@ def oof(x):
     print(num+x)
 x = int(random.randrange(1,11))
 oof(x)
+print("hi")
