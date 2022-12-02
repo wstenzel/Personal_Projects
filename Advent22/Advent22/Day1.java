@@ -7,35 +7,53 @@ public class Day1
         Scanner file = new Scanner(new File("calories.txt"));
         int check1=0;
         String check2;
-        int check3 = 0;
-        boolean check = false;
+        boolean check = true;
         int sum=0;
-        int top=0;
-        
+        int top1=0;
+        int top2=0;
+        int top3=0;
+        int top;
         while(file.hasNext())
         {
-            
+            check = true;
             check2 = file.nextLine();
+            /*
             if(check2.equals(""))
             {
                 check = false;
             }
             else
                 check1 = Integer.parseInt(check2);
-            
-            if(check)
+                */
+            System.out.println(check2+"    "+check);
+            if(check2.equals(""))
             {
-                sum = sum + check1;
+                
+                if (sum>top1)
+                {
+                    top3 = top2;
+                    top2 = top1;
+                    top1 = sum;
+                }
+                if (sum > top2 && sum < top1)
+                {
+                    top3 = top2;
+                    top2 = sum;
+                }
+                if (sum>top3 && sum < top2)
+                {
+                    top3 = sum;
+                }
+                sum = 0;
             }
             else
             {
-                sum = 0;
+                check1 = Integer.parseInt(check2);
+                sum = sum + check1;
             }
-            if (sum>top)
-            {
-                top = sum;
-            }
+           
         }
+        top = top1 + top2 + top3;
         System.out.print(top);
     }
 }
