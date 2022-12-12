@@ -7,36 +7,41 @@ public class Day3
     {
         Scanner file = new Scanner(new File("Day3.txt"));
         String item;
-        String l1,l2;
-        int total = 0;
+        String side1, side2;
+        int score=0;
+        
         while(file.hasNext())
         {
-            int c = 0;
-            int c1 = 0;
+            //int check1=0,check2=0;
+            char char1='a', char2='b';
             item = file.nextLine();
-            int len = item.length()-1;
-            l1 = item.substring(0,(len/2)+1);
-            l2 = item.substring((len/2)+1);
-            while(c < l1.length())
+            int len = item.length();
+            len = len - 1;
+            int len2 = len/2;
+            side1 = item.substring(0,len2);
+            side2 = item.substring(len2);
+            
+            for(int check1=0; check1 < len2; check1++)
             {
-                char hold = l1.charAt(c);
-                while(c1 < l2.length())
+                char1 = side1.charAt(check1);
+                for(int check2=0; check2 < len2; check2++)
                 {
-                    char hold1 = l2.charAt(c1);
-                    if (hold1 == hold)
+                    char2 = side2.charAt(check2);
+                    System.out.print(len+"  "+len2+"  "+char1+"  "+char2+"\n");
+                    if(char1 == char2)
                     {
-                        total += Day3.scoreIt(hold);
+                        int up1 = Day3.scoreIt(char1);
+                        System.out.print("  "+up1+"  ");
+                        score += up1;
                     }
-                    c1++;
+                    check2+=1;
                 }
-                c++;
-                c1=0;
+                check1+=1;
             }
-            //System.out.print(len+"  "+item+"  "+l2+"  "+l2+"\n");
+            
             
         }
-        System.out.print(total);
-        
+        System.out.print(score);
         }
     public static int scoreIt(char inside)
     {
