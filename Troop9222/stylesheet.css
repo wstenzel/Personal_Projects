@@ -1,0 +1,18 @@
+body {
+  background-color: forestgreen;}
+h1 {
+  color: red; 
+  text-align: center;}
+h2 {
+  color: blue; 
+  text-align: center;}
+a:link, a:visited {
+  background-color: aqua;
+  color: black;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;}
+a:hover, a:active {
+  background-color: red;
+color: white;}
