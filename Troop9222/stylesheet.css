@@ -12,7 +12,13 @@ a:link, a:visited {
   padding: 15px 25px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;}
+  display: inline-block;
+border-radius: 6px;}
 a:hover, a:active {
   background-color: red;
 color: white;}
+
+iframe
+{
+  display: block;
+}
